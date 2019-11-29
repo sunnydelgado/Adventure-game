@@ -40,7 +40,12 @@ function level1(){
 	image.src = "img/horror3.jpg";
 	title.style.display = "none"
 	description.innerHTML = "Maak een keuze uit de 2 deuren "
-
+	description.style.marginLeft = "300px"
+	button1.innerHTML = "deur 1"
+	button2.innerHTML = "deur 2"
+	button3.style.display = "none"
+	
+	
 }
 
 

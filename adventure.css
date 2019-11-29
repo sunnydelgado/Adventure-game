@@ -23,14 +23,14 @@ img{
 	display:block;
 	height:900px;
 	width: 1400px;
-	margin: 25px 50px 0px 250px;
+	margin: 20px 10px 0px 250px;
 	border: solid white;
 
 }
 h1{
 	position: absolute;
 	left: 240px;
-	margin-left:590px;
+	margin:0px 20px 20px 600px;
 }
 #description{
 	position: absolute;
