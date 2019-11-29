@@ -1,0 +1,60 @@
+{
+	margin:0;
+	padding: 0;
+}
+@font-face {
+    font-family: 'nosifer_capsregular';
+    src: url('nosifercaps-regular-webfont.woff2') format('woff2'),
+         url('nosifercaps-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    
+
+}
+body{
+	font-family: 'nosifer_capsregular';
+	background-image: url('img/horror2.jpg');
+	color: red;
+	background-repeat: no-repeat;
+
+}
+img{
+	background-repeat: no-repeat;
+	display:block;
+	height:900px;
+	width: 1400px;
+	margin: 25px 50px 0px 250px;
+	border: solid white;
+
+}
+h1{
+	position: absolute;
+	left: 240px;
+	margin-left:590px;
+}
+#description{
+	position: absolute;
+	top:150px;
+	left:430px;
+	margin: 0px 10px 20px 170px;
+}
+#game-buttons{
+	position: absolute;
+	top:850px;
+	left: 700px;
+}
+#button1,#button2,#button3{
+	font-family: 'nosifer_capsregular';
+	text-align: center;
+	font-size: 15px; 
+	margin: 20px;
+	background-color:white; 
+}
+#button1:hover,#button2:hover,#button3:hover{
+	font-family: 'nosifer_capsregular';
+	background-color:#ddd;
+	text-align: center;
+	font-size: 15px; 
+	margin: 20px;
+	background-color:red; 
+}
