@@ -37,17 +37,42 @@ function credits(){
 }
 
 function level1(){
-	image.src = "img/horror3.jpg";
+	image.src = "img/hall.jpg";
 	title.style.display = "none"
-	description.innerHTML = "Maak een keuze uit de 2 deuren "
-	description.style.marginLeft = "300px"
+	description.innerHTML = "Maak een keuze uit de drie volgende doorgangen <br> Deur 1 <br> Deur 2 <br> Lift"
+	description.style.marginLeft = "170px"
 	button1.innerHTML = "deur 1"
+	button1.setAttribute("onclick", "level2();")
+	button1.style.marginLeft = "110px"
 	button2.innerHTML = "deur 2"
-	button3.style.display = "none"
-	
-	
+	button2.setAttribute ("onclick","level3();")
+	button3.innerHTML = "Lift"
+	button3.setAttribute ("onclick","lift();")
 }
 
+function level2(){
+	image.src = "img/torture.jpg"
+	description.innerHTML = "Ga opzoek naar de lift sleutel als ik jou was zal ik goed rond kijken"
+	description.style.marginRight = "550px"
+	button1.innerHTML = "hall"
+	button1.setAttribute("onclick", "level1();")
+	button2.innerHTML = "In emmer kijken"
+	button3.style.display = "none"
+}
+
+function level3(){
+	image.src = "img/room.jpg"
+	button1.innerHTML = "hall"
+	button1.setAttribute("onclick", "level1();")
+	button2.style.display = "none"
+	button3.style.display = "none"
+}
+
+function lift(){
+	if (key == false){
+	alert("Je hebt geen lift sleutel ga eerst opzoek naar de sleutel")
+	}
+}	
 
 
 
