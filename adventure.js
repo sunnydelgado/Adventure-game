@@ -5,6 +5,7 @@ var button1 = document.getElementById('button1');
 var button2 = document.getElementById('button2');
 var button3 = document.getElementById('button3');
 var inventoryItem = document.getElementById('inventoryItem');
+var inventoryItem = document.getElementById('inventoryItem');
 
 var lighter = false;
 var key = false;
@@ -52,12 +53,6 @@ function level1(){
 	button3.style.display = "inline-block";
 }
 
-function lift(){
-	if (key == false){
-	alert("Je hebt geen lift sleutel ga eerst opzoek naar de sleutel");
-	}
-}	
-
 function level2(){
 	image.src = "img/torture.jpg"
 	description.innerHTML = "Ga opzoek naar de lift sleutel als ik jou was zal ik goed rond kijken";
@@ -84,8 +79,6 @@ function bucket(){
 	button1.style.display = "none";
 	inventoryItem.style.display = "inline-block";
     inventoryItem.src = "img/key.jpg";
-    inventoryItem.style.width = "200px";
-    inventoryItem.style.height = "75px";
     inventoryItem.style.marginLeft = "20px";
     button2.innerHTML = "kijk uit het emmer";
  	button2.setAttribute("onclick", "level2a()");
@@ -110,32 +103,98 @@ function level2a(){
 }
 
 function level3(){
-	image.src = "img/room.jpg";
+	if (lighter == false){
+	image.src = "img/kast-with-lighter.jpg";
 	description.innerHTML = "Door zoek de kamer";
 	description.style.marginLeft = "120px";
 	button1.style.marginLeft = "25px";
 	button1.innerHTML = "hall"
 	button1.setAttribute("onclick", "level1();");
-	button1.style.display = "inline-block";
 	button2.innerHTML = "Kijk onder het bed";
-	button2.setAttribute("onclick", "bed();");
-	button2.style.display = "inline-block";
-	button3.innerHTML = "Kijk in de kast";
-	button1.setAttribute("onclick", "kast();");
-	button3.style.display = "inline-block";
+	button2.setAttribute("onclick", "gameover();")
+	button3.innerHTML = "pak aansteker";
+	button3.setAttribute("onclick", "getlighter();");
+
+}else{
+	image.src= "img/kast-without-lighter.jpg";
+	description.innerHTML ="Je hebt nu de aansteker ";
+	description.style.display = "inline-block";
+	button1.innerHTML = "hall"
+	button1.setAttribute("onclick", "level1();");
+	button2.innerHTML = "Kijk onder het bed";
+	button3.style.display = "none";
+	inventoryItem.src = "img/lighter.jpg";
+	inventoryItem.style.display = "inline-block";
+	inventoryItem.style.marginLeft = "20px";
 }
-function bed(){
+}
+function getlighter(){
+	lighter = true;
+	level3();
+}
+
+
+function lift(){
+	if (key == false){
+	alert("Je hebt geen lift sleutel ga eerst opzoek naar de sleutel");
+	}else{
+	image.src = "img/room2.jpg"
+	description.innerHTML = "Je hoort een raar geluid ga naar het geluid toe of loop verder"
+	button1.innerHTML = "Loop verder"
+	button1.setAttribute("onclick", "lopen();");
+	button2.innerHTML = "Ga naar het geluid";
+	button2.setAttribute("onclick", "gameover();")
+	button3.innerHTML  = "hall";
+	button3.setAttribute("onclick", "level1();");
+	inventoryItem.style.display = "inline-block";
+	inventoryItem.style.marginLeft = "20px";
+}
+}
+
+function lopen(){
+	image.src = "img/darkroom.jpg"
+	description.innerHTML = "Je ziet niks gebruik je aansteker"
+	button1.innerHTML = "aansteker"
+	button1.setAttribute("onclick", "lopen2();");
+	button2.style.display = "none"
+	button3.style.display = "none"
+	inventoryItem.style.display = "inline-block";
+	inventoryItem.style.marginLeft = "20px";
+}
+function lopen2(){
+	image.src = "img/lightroom.jpg"
+	description.innerHTML = "Loop door een van de 2 deuren <br> Deur 1 <br> Deur 2 "
+	button1.innerHTML = "Deur 1";
+	button1.setAttribute("onclick", "gameover();");
+	button2.innerHTMLL = "Deur 2";
+	button3.setAttribute("onclick", "victory();");
+	button3.style.display = "none";
+	inventoryItem.style.display = "none";
+}
+
+// Game Over
+
+function gameover(){
 	image.src = "img/monster.jpg";
 	description.innerHTML= "Game over"
-	button1.innerHTML = "Start over"
+	description.style.textAlign = "center";
+	description.style.fontSize = "20px";
+	button1.innerHTML = "Start over";
+	button1.setAttribute("onclick","window.location.reload();");
 	button2.style.display = "none"
 	button3.style.display = "none"
 }
 
+// Victory
 
-
-
-
+function victory(){
+	image.src = "img/win.jpg"
+	description.style.display = "none"
+	button1.innerHTML = "Play again";
+	button1.setAttribute("onclick","window.location.reload();");
+	button2.style.display = "none"
+	button3.style.display = "none"
+}
 
 
 

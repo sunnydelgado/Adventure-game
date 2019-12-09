@@ -58,3 +58,13 @@ h1{
 	margin: 20px;
 	background-color:red; 
 }
+#inventoryItem{
+	position: absolute;
+	top: 100px;
+	left: 1650px;
+	height: 150px;
+	width: 200px;
+	border-style:dotted;
+	border-width: 5px;
+	border-color: red;
+}
